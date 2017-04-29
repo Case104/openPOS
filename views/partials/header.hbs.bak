@@ -9,12 +9,12 @@
         <span class="icon-bar"></span>
       </button>
       <a class="navbar-brand" href="/">Home</a>
-      <a class="navbar-brand" href="/reports">Reports</a>
-      <a class="navbar-brand" href="/payments">Payments</a>
-      <a class="navbar-brand" href="/time">Time</a>
-      <a class="navbar-brand" href="/cart">Cart</a>
-      <a class="navbar-brand" href="/taxes">Taxes</a>
-      <a class="navbar-brand" href="/settings">Settings</a>
+      <a class="navbar-brand" href="/">Reports</a>
+      <a class="navbar-brand" href="/">Payments</a>
+      <a class="navbar-brand" href="/">Time</a>
+      <a class="navbar-brand" href="/">Cart</a>
+      <a class="navbar-brand" href="/">Taxes</a>
+      <a class="navbar-brand" href="/">Settings</a>
     </div>
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
