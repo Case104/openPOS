@@ -1,0 +1,29 @@
+<!--link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"-->
+<div class="row">
+    <div class="col-sm-6 col-md-4 col-md-offset-4 col-sm-offset-3">
+        <h1>Timesheet</h1>
+        <form action="/timesheet" method="post" id="timesheet-form">
+	<input type="hidden" id="name" class="form-control" required name="name" value="John Doe">
+		<div class="col-xs-12">
+		    <div class="form-group">
+                        <label for="card-name">Time</label>
+                        <input type="tel" id="time" class="keyboard form-control" value="">
+                    </div>
+                    <div class="form-group">
+			<label for="card-name">Employee Id</label>
+                        <input type="tel" id="employeeid" class="keyboard form-control" value="">
+                    </div>
+            </div>
+            <button type="submit" class="btn btn-success">Enter</button>
+        </form>
+    </div>
+</div>
+
+<!--script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script-->
+<!--script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script-->
+<script>
+	$(function(){
+		$('#employeeid').keyboard();
+        $('#time').keyboard();        
+	});
+</script>

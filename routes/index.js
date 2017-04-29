@@ -13,7 +13,7 @@ router.get('/', function(req, res, next) {
 		for (var i = 0; i < docs.length; i += chunkSize){
 			productChunks.push(docs.slice(i, i + chunkSize));
 		}
-  res.render('shop/index', { title: 'Shopping Cart', products: productChunks, successMsg: successMsg, noMessage: !successMsg});
+  res.render('shop/index', { title: 'openPOS', products: productChunks, successMsg: successMsg, noMessage: !successMsg});
 	});
 });
 
@@ -55,13 +55,25 @@ router.get('/shopping-cart', function(req, res, next){
 	res.render('shop/shopping-cart', {products: cart.generateArray(), totalPrice: cart.totalPrice});
 });
 
+router.get('/timesheet', function(req, res, next){
+	res.render('time/timesheet')
+});
+
+router.get('/inventory', function(req, res, next){
+	res.render('inventory/inventory')
+});
+
+router.get('/reports', function(req, res, next){
+	res.render('report/reports')
+});
+
 router.get('/checkout', isLoggedIn, function(req, res, next){
 	if (!req.session.cart){
 		return res.redirect('/shopping-cart');
 	}
 	var cart = new Cart(req.session.cart);
 	var errMsg = req.flash('error')[0];
-	res.render('shop/checkout', {total: cart.totalPrice, errMsg: errMsg, noError: !errMsg});
+	res.render('shop/checkout', {total: cart.totalPrice, tax: (cart.totalPrice * .06875).toFixed(2), grandTotal: (cart.totalPrice * 1.06875).toFixed(2), errMsg: errMsg, noError: !errMsg});
 });
 
 router.post('/checkout', isLoggedIn, function(req, res, next){

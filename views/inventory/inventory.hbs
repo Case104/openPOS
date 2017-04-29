@@ -1,0 +1,58 @@
+<div class="row">
+  <h3> Inventory Management </h3>
+</div>
+<div>
+  <table>
+    <tr>
+      <td> <button> Current Inventory </button> </td>
+      <td> <button> Add A Product </button> </td>
+      <td> <button> Recommended </button> </td>
+      <td> <button> Sales Reports </button> </td>
+    </tr>
+  </table>
+</div>
+
+<div>
+  <input value="search" /> <img src="images/searchicon.jpg"/>
+</div>
+
+<div class="headerRow">
+  <tr>
+    <td> <div class="caption">SKU</div> </td>
+    <td> <div class="caption">Product</div> </td>
+    <td> <div class="caption">Product Type </div> </td>
+    <td> <div class="caption">Taxable </div> </td>
+    <td> <div class="caption">Quantity </div> </td>
+    <td> <div class="caption">Misc </div> </td>
+    <td> <div class="caption">Recommended </div> </td>
+    <td> <div class="caption">Sales Reports</div> </td>
+  </tr>
+</div>
+
+{{# each products }}
+<div class="row">
+  {{# each this }}
+  <div class="col-sm-6 col-md-4">
+    <tr>
+      <td> {{ this.sku }} </td>
+      <td> {{ this.product }} </td>
+      <td> {{ this.productType }} </td>
+      <td> {{ this.taxable }} </td>
+      <td> {{ this.quantity }} </td>
+      <td> {{ this.misc }} </td>
+      <td> {{ this.recommendation }} </td>
+      <td> {{ this.salesReports }} </td>
+    </tr>
+  </div>
+  {{/each}}
+</div>
+{{/each}}
+<table>
+  <tr>
+    <td> First</td>
+    <td> &ltPrevious </td>
+    <td>1</td><td>2</td><td>3</td>
+    <td>Next&gt</td>
+    <td>Last</td>
+  </tr>
+</table>
